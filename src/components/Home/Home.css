@@ -1,0 +1,45 @@
+#root {
+    background-color: #252524;
+    border: solid 1px orangered;
+}
+
+h1 {
+    user-select: none;
+    border: solid 1px white;
+  }
+
+p {
+    text-align: left;
+    border: solid 1px white;
+    font-family: "Anton", sans-serif;
+    padding-left: 40px;
+}
+
+.underText {
+    text-align: right;
+    border: solid 1px white;
+    font-family: "Anton", sans-serif;
+    padding-right: 30px;
+}
+
+.homeNav {
+    justify-content: center;
+    align-items: center;
+    border: solid 1px white;
+}
+
+.logo {
+    height: 20em;
+    /* border: solid 1px white; */
+    border-radius: 15%;
+
+}
+
+.content-container {
+    border: solid 1px goldenrod;
+    max-width: 810px;
+}
+
+.homeNav {
+    border: solid 1px goldenrod;
+}
