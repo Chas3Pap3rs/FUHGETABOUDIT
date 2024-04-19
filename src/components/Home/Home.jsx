@@ -19,7 +19,8 @@ function Home() {
 
       <div>
         <p>&#40;Don't you&#41;</p>
-        <h1 onClick={playAudio}>FUHGETABOUDIT</h1>
+        <img onClick={playAudio} src="https://fontmeme.com/permalink/240419/a6f218d53b911d03f6486acb997ce446.png" alt="godfather-font" border="0" />
+        {/* <h1 onClick={playAudio}>FUHGETABOUDIT</h1> */}
         <div className="underText">...until the job is finished.</div>
       </div>
     </div>

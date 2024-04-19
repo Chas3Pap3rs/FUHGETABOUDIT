@@ -29,11 +29,20 @@ p {
 }
 
 .logo {
-    height: 20em;
-    /* border: solid 1px white; */
+    /* height: 20em; */
+    /* border: dashed 1px white; */
     border-radius: 15%;
+    width: calc(100px * 4 + 2em);
+    height: auto;
 
 }
+
+/* @media (max-width: 443px) {
+    .logo {
+        columns: 1;
+        column-gap: 3em;
+    }
+} */
 
 .content-container {
     border: solid 1px goldenrod;
@@ -43,3 +52,95 @@ p {
 .homeNav {
     border: solid 1px goldenrod;
 }
+
+.godfatherFont:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 .5em red);
+}
+
+
+/* .results {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.item {
+    margin-bottom: 1em;
+    border-radius: 10px;
+    width: calc(200px * 4 + 2em);
+    height: auto;
+
+}
+
+.container {
+    flex: 1 0 25%;  
+    columns: 6;
+    column-gap: 1em;
+}
+
+    @media (max-width: 1399px) {
+        .container {
+            columns: 5;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .container {
+            columns: 4;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .container {
+            columns: 3;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            columns: 2;
+        }
+    }
+
+    @media (max-width: 443px) {
+        .container {
+            columns: 1;
+            column-gap: 3em;
+        }
+    }
+
+.body {
+    font-family: "Madimi One", sans-serif;
+}
+
+.navbar {
+    margin-bottom: 15px;
+    font-family: "Madimi One", sans-serif;
+}
+
+.navbar-toggler:hover, 
+.navbar-toggler:focus {  
+    color: gold; 
+}
+
+.navbar-brand,
+.navbar-nav .nav-link,
+.navbar-nav .nav-link.active,
+.navbar-toggler, .navbar-toggler.collapsed { 
+    color: white;
+}
+
+.navbar-nav:hover .nav-link:hover,
+.navbar-nav:hover .nav-link.active:hover,
+.navbar-toggler:hover, .navbar-toggler.collapsed:hover,
+.navbar-brand:hover, .btn:hover { 
+    color: gold;
+} 
+
+
+.madimi-one-regular {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+} */

@@ -57,8 +57,8 @@ function App() {
 
       {/* Ensure the audio file path is correct */}
 
-      {/* <TodoList /> */}
-      <Home />
+      <TodoList />
+      {/* <Home /> */}
 
 
       {/*<audio ref={audioRef} src="./src/assets/audio/forget-about-it-made-with-Voicemod.mp3" preload="auto" /> */}
