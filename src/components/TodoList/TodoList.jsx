@@ -3,6 +3,7 @@ import './TodoList.css'
 // import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import CreateTask from '../modals/CreateTask.jsx';
 import Card from '../Card/Card.jsx';
+import { Link } from 'react-router-dom'; 
 
 
 function TodoList() {
@@ -52,10 +53,14 @@ function TodoList() {
   return (
     <>
         <div className = "todopage-container">
+        
+        <Link to="/" className="todo-home-btn btn" type="button">Home</Link>
      
 
       <div className="todo-heading container text-center">
+      {/* <img src='./src/assets/images/fuhgetaboudit-logo-1.png' className="todo-logo" alt="site logo" /> */}
         <div>
+
           <img className="hitlist-heading" src="https://fontmeme.com/permalink/240419/9579a4fe14db42b26713205df4506f8b.png" alt="hitlist-godfather-font" />
           </div>
 
@@ -78,7 +83,7 @@ function TodoList() {
                 {/* {taskList && taskList.map((obj) => <li>{obj.Name}: {obj.Description} </li>)} */}
 
                 {taskList && taskList.map((obj , index) => 
-                  <Card taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/> 
+                  <Card key={index} taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/> 
                 )}
             </div>
 

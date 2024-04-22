@@ -15,6 +15,20 @@
     
 }
 
+.todo-home-btn.btn {
+    border: 1.5px outset black;
+    font-family: "Anton", sans-serif;
+    font-size: small;
+    margin: 5px;
+}
+
+.todo-home-btn.btn:hover {
+    background-color: #252524;
+    border: 1.5px inset black;
+    box-shadow: inset 0px 0px 2.5px 1.25px rgba(0,0,0,0.6);
+    color: red;
+}
+
 .header {
     width: auto;
     height: 150px;
@@ -89,6 +103,16 @@
     max-width: 8%;
     margin-top: 10px;
     margin-left: 20px;
+
+    height:auto;
+    /* border: dashed 1px yellow; */
+    border-radius: 15%;
+    width: 100%;
+
+    padding: 1.5em;
+    margin-top: 10%;
+    will-change: filter;
+    transition: filter 300ms;
 }
 
 .godfatherFontTodo {
@@ -146,4 +170,19 @@
     .todopage-container {
        min-width: 386px;
     }
+}
+
+
+.todo-logo {
+    /* border: dashed 1px yellow; */
+    border-radius: 15%;
+    width: 30%;
+    height: auto;
+
+    padding: 1.5em;
+    margin-top: 10%;
+    will-change: filter;
+    transition: filter 300ms;
+    position: relative;
+    justify-content: left;
 }

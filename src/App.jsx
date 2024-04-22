@@ -1,8 +1,14 @@
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
 import TodoList from './components/TodoList/TodoList';
 import Home from './components/Home/Home';
+import ContactForm from './components/modals/ContactForm';
 
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -55,7 +61,16 @@ function App() {
       {/* Ensure the audio file path is correct */}
 
       {/* <TodoList /> */}
-      <Home />
+      {/* <Home /> */}
+      
+      <BrowserRouter>
+      <Routes>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/todo-list' element={<TodoList />}></Route>
+            <Route path='/contact' element={<ContactForm />}></Route>
+        </Routes> 
+        </BrowserRouter> 
+      {/* <ContactForm /> */}
 
 
       {/*<audio ref={audioRef} src="./src/assets/audio/forget-about-it-made-with-Voicemod.mp3" preload="auto" /> */}

@@ -1,6 +1,8 @@
-import React, {useRef} from 'react'
+import { useRef, useState } from 'react';
 import './Home.css';
-
+// import TodoList from '../TodoList/TodoList';
+import { Link } from 'react-router-dom';
+import ContactForm from '../modals/ContactForm';
 
 function Home() {
   const audioRef = useRef(null); // useRef hook to store audio element
@@ -8,6 +10,14 @@ function Home() {
   const playAudio = () => {
   audioRef.current.play(); // Play the audio when h1 is clicked
   };
+
+  const [modalOpen, setModalOpen] = useState(false); // State for ContactForm modal
+
+  const toggleContactForm = () => {
+    setModalOpen(!modalOpen); // Toggle modal visibility
+  };
+
+  
 
   return (
     <>
@@ -28,11 +38,28 @@ function Home() {
       <br />
 
       <div className="homeNav">
-        <button className=" home-login-btn btn">I'm Made</button>&nbsp;
-        &nbsp;<button className="home-contact-btn btn" >Join The Family</button>
+
+        {/* <button className="home-login-btn btn">I'm Made</button> */}
+        <Link to="/todo-list" className="home-login-btn btn" type="button">I'm Made</Link>
+        
+        &nbsp;
+        &nbsp;
+        {/* <Link to="/contact" className="home-contact-btn btn" type="button">Join The Family</Link> */}
+        <button
+            className="home-contact-btn btn"
+            type="button"
+            onClick={toggleContactForm} // Trigger ContactForm toggle function
+          >
+            Join The Family
+          </button>
+
       </div>
 
       <audio ref={audioRef} src="./src/assets/audio/forget-about-it-made-with-Voicemod.mp3" preload="auto" />
+      
+
+          {/* Render ContactForm conditionally based on modalOpen state */}
+          {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
 
     </>
   )

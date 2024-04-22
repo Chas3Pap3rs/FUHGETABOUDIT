@@ -43,13 +43,22 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
 
   return (
     <>       
-        <div className = "card-wrapper mr-5" style={{"position" : "relative"}} onClick = {() => setModal(true)}>
+        <div key={index} className = "card-wrapper mr-5" style={{"position" : "relative"}} onClick = {() => setModal(true)}>
             <div className = "card-top" 
                 style={{"backgroundColor": "#252524"}}>
 
                 <span className = "card-header" style={{"backgrounColor": "black", "borderRadius": "10px"}}>{taskObj.Name}</span>
 
                 
+
+                
+
+                <i className = "fa-solid fa-pencil" 
+                        style={{"color" : "white", "cursor" : "pointer"}} 
+                        onClick = {() => setModal(true)}>
+
+                    </i>
+
                 <i className = "fa-solid fa-crosshairs" 
                         style={{"color" : "white", "cursor" : "pointer"}} 
                         onClick = {() => setModal(true)}>
@@ -57,7 +66,7 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
                     </i>
 
                     <i className="fa-solid fa-toilet ml-2" 
-                        style = {{"cursor" : "pointer", "justify-content" : "flex-end"}} 
+                        style = {{"cursor" : "pointer", "justifyContent" : "flex-end"}} 
                         onClick = {handleDelete}>
 
                     </i>

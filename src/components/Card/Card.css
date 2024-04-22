@@ -104,6 +104,10 @@ i {
     margin-left: 7.5px;
 }
 
+.fa-solid.fa-pencil {
+    margin-right: 7.5px;
+}
+
 .edit-buttons {
     width: 100%;
     /* padding: 10px; */

@@ -10,6 +10,10 @@
     border-radius: 10px; 
 }
 
+.modal-content:hover {
+    filter: drop-shadow(0 0 .1em red);
+}
+
 .form-control {
     box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.6);
     border: 1.5px inset black;
@@ -34,4 +38,11 @@
 
 .modal-footer {
     border: none;
+}
+
+.modal-edit-btn, .modal-trash-btn {
+    /* border: 1.5px outset black;
+    font-family: "Anton", sans-serif;
+    font-size: small;
+    background-color: #252524; */
 }

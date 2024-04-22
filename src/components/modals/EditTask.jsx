@@ -48,8 +48,8 @@ const EditTask= ({modal, toggle, updateTask, taskObj}) => {
                 
             </ModalBody>
             <ModalFooter>
-            <Button color="warning" onClick={handleUpdate}>Get To It</Button>{' '}
-            <Button color="danger" onClick={toggle}>Fuhgetaboudit</Button>
+            <Button color="warning" style={{"font-family" : "Anton, sans-serif", "background-color" : "#252524", "color" : "goldenrod"}} onClick={handleUpdate}>Get To It</Button>{' '}
+            <Button color="danger" style={{"font-family" : "Anton, sans-serif", "background-color" : "#252524", "color" : "red"}} onClick={toggle}>Fuhgetaboudit</Button>
             </ModalFooter>
       </Modal>
     );
