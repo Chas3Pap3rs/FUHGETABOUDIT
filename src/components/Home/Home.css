@@ -1,157 +1,106 @@
-#root {
+#root{
     /* background-color: #252524;
     border: dashed 1px orangered; */
+
+    /* max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    border: solid 1px red; */
 }
 
-/* h1 {
+.home-h1 {
     user-select: none;
-    border: solid 1px white;
-  } */
+    /* border: solid 1px white; */
+  }
 
-/* p {
+.home-p {
     text-align: left;
-    border: solid 1px white;
+    /* border: solid 1px white; */
     font-family: "Anton", sans-serif;
     padding-left: 35px;
-} */
+}
 
-/* .underText {
+.home-underText {
     text-align: right;
-    border: solid 1px white;
+    /* border: solid 1px white; */
     font-family: "Anton", sans-serif;
     padding-right: 30px;
 }
 
-.homeNav {
-    justify-content: center;
-    align-items: center;
-    border: solid 1px white;
-} */
-
-/* .logo {
-    height: 20em;
-    border: dashed 1px yellow;
+.home-logo {
+    height:auto;
+    /* border: dashed 1px yellow; */
     border-radius: 15%;
-    width: calc(100px * 4 + 2em);
-    height: auto;
+    width: 100%;
 
     padding: 1.5em;
+    margin-top: 10%;
     will-change: filter;
     transition: filter 300ms;
 
 
-} */
-
-/* @media (max-width: 443px) {
-    .logo {
-        columns: 1;
-        column-gap: 3em;
-    }
-} */
-
-/* .content-container {
-    border: solid 1px goldenrod;
-    max-width: 810px;
 }
 
+.home-content-container, 
 .homeNav {
-    border: solid 1px goldenrod;
+    /* border: solid 1px goldenrod; */
+    max-width: 810px;
+    text-align: center;
+    margin: 0 auto;
 }
 
-.godfatherFont {
+@media (max-width: 365px) {
+    .home-content-container,
+    .homeNav {
+       min-width: 365px;
+    }
+}
+
+@media (min-width: 700px) {
+    .home-content-container,
+    .homeNav {
+       max-width: 700px;
+    }
+}
+
+.home-godfatherFont {
     max-width: 100%;
     margin-top: 0px;
     margin-left: 0px;
-} */
+} 
 
-.godfatherFont:hover {
+.home-godfatherFont:hover {
   cursor: pointer;
   filter: drop-shadow(0 0 .5em red);
 }
 
-
-/* .results {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.item {
-    margin-bottom: 1em;
-    border-radius: 10px;
-    width: calc(200px * 4 + 2em);
-    height: auto;
-
-}
-
-.container {
-    flex: 1 0 25%;  
-    columns: 6;
-    column-gap: 1em;
-}
-
-    @media (max-width: 1399px) {
-        .container {
-            columns: 5;
-        }
-    }
-
-    @media (max-width: 1199px) {
-        .container {
-            columns: 4;
-        }
-    }
-
-    @media (max-width: 992px) {
-        .container {
-            columns: 3;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .container {
-            columns: 2;
-        }
-    }
-
-    @media (max-width: 443px) {
-        .container {
-            columns: 1;
-            column-gap: 3em;
-        }
-    }
-
-.body {
-    font-family: "Madimi One", sans-serif;
-}
-
-.navbar {
-    margin-bottom: 15px;
-    font-family: "Madimi One", sans-serif;
-}
-
-.navbar-toggler:hover, 
-.navbar-toggler:focus {  
-    color: gold; 
-}
-
-.navbar-brand,
-.navbar-nav .nav-link,
-.navbar-nav .nav-link.active,
-.navbar-toggler, .navbar-toggler.collapsed { 
-    color: white;
-}
-
-.navbar-nav:hover .nav-link:hover,
-.navbar-nav:hover .nav-link.active:hover,
-.navbar-toggler:hover, .navbar-toggler.collapsed:hover,
-.navbar-brand:hover, .btn:hover { 
-    color: gold;
-} 
+.home-login-btn.btn, .home-contact-btn.btn {
+    border: 1.5px outset black;
+    font-family: "Anton", sans-serif;
+    font-size: small;
+  }
+  
+  .home-login-btn.btn:hover {
+    /* filter: drop-shadow(0 0 .5em red); */
+    background-color: #252524;
+    border: 1.5px inset black;
+    box-shadow: inset 0px 0px 2.5px 1.25px rgba(0,0,0,0.6);
+    color: red;
+  }
+  
+  .home-contact-btn.btn:hover {
+      /* filter: drop-shadow(0 0 .5em goldenrod); */ 
+      /* border: solid 2px goldenrod; */
+      background-color: #252524;
+      border: 1.5px inset black;
+      box-shadow: inset 0px 0px 2.5px 1.25px rgba(0,0,0,0.6);
+      color: goldenrod;
+  }
 
 
-.madimi-one-regular {
-    font-family: "Madimi One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-} */
+
+
+
+
+

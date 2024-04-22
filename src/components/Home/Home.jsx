@@ -11,25 +11,25 @@ function Home() {
 
   return (
     <>
-    <div className="content-container container-fluid">
+    <div className="home-content-container container-fluid">
       <a href="https://idgif.com/" target="_blank">
-        <img src='./src/assets/images/fuhgetaboudit-logo-1.png' className="logo" alt="site logo" />
+        <img src='./src/assets/images/fuhgetaboudit-logo-1.png' className="home-logo" alt="site logo" />
       </a>
 
 
-      <div>
-        <p>&#40;Don't you&#41;</p>
-        <img className="godfatherFont" onClick={playAudio} src="https://fontmeme.com/permalink/240419/a6f218d53b911d03f6486acb997ce446.png" alt="godfather-font" border="0" />
+      <div className="home-logo-sign">
+        <p className="home-p">&#40;Don't you&#41;</p>
+        <img className="home-godfatherFont" onClick={playAudio} src="https://fontmeme.com/permalink/240419/a6f218d53b911d03f6486acb997ce446.png" alt="godfather-font" border="0" />
         {/* <h1 onClick={playAudio}>FUHGETABOUDIT</h1> */}
-        <div className="underText">...until the job is finished.</div>
+        <div className="home-underText">...until the job is finished.</div>
       </div>
     </div>
 
       <br />
 
       <div className="homeNav">
-        <button className="btn btn-outline-danger">I'm Made</button>&nbsp;
-        &nbsp;<button className="btn btn-outline-warning" >Join The Family</button>
+        <button className=" home-login-btn btn">I'm Made</button>&nbsp;
+        &nbsp;<button className="home-contact-btn btn" >Join The Family</button>
       </div>
 
       <audio ref={audioRef} src="./src/assets/audio/forget-about-it-made-with-Voicemod.mp3" preload="auto" />

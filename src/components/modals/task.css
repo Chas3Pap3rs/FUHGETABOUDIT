@@ -1,0 +1,37 @@
+.task-modal {
+    background-color: black;
+    border-radius: 10px;
+}
+
+.modal-content {
+    background-color: #252524;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.6);
+    border: 1.5px outset black;
+    border-radius: 10px; 
+}
+
+.form-control {
+    box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.6);
+    border: 1.5px inset black;
+}
+
+.modal-body {
+    box-shadow: inset 5px 5px 5px 5px rgba(0,0,0,0.6);
+    border-bottom: 1.5px inset black;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    /* border-top-right-radius: 5px; */
+    /* border-bottom-right-radius: 10px; */
+}
+
+.modal-title {
+    font-family: "Anton", sans-serif;
+}
+
+.modal-header {
+    border: none;
+}
+
+.modal-footer {
+    border: none;
+}

@@ -1,8 +1,8 @@
 #root {
   /* max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center; */
+  padding: 2rem; */
+  /* text-align: center; */
   /* border: solid 1px red; */
 }
 
@@ -36,19 +36,34 @@ h1:hover, img:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
 
+
 /* .button.count:hover, button.reset:hover,  */
 .btn:hover {
-  filter: drop-shadow(0 0 .5em goldenrod);
-  border: solid 2px goldenrod;
-  color: #252524
+  /* filter: drop-shadow(0 0 .5em goldenrod); */
+  /* border: solid 2px goldenrod; */
+  /* color: #252524; */
+
+}
+
+/* .btn.btn-outline-danger, .btn.btn-outline-warning  {
+  border: 1.5px outset black;
+  font-family: "Anton", sans-serif;
+  font-size: small;
 }
 
 .btn.btn-outline-danger:hover {
   filter: drop-shadow(0 0 .5em red);
   border: solid 2px red;
-  color: #252524;
+  background-color: #252524;
+  box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.6);
 }
 
+.btn.btn-outline-warning:hover {
+    filter: drop-shadow(0 0 .5em goldenrod);
+    border: solid 2px goldenrod;
+    background-color: #252524;
+    box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.6);
+} */
 
 
 

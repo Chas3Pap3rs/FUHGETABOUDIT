@@ -51,7 +51,7 @@ function TodoList() {
 
   return (
     <>
-        {/* <div className = "header"> */}
+        <div className = "todopage-container">
      
 
       <div className="todo-heading container text-center">
@@ -61,7 +61,7 @@ function TodoList() {
 
       <div>
 
-          <button className = "btn btn-outline-light mt-3" onClick={() => setModal(true)}>New Hit</button>
+          <button className = "todo-btn btn btn-outline-light mt-3" onClick={() => setModal(true)}>New Hit</button>
 
       </div>
 
@@ -84,7 +84,7 @@ function TodoList() {
 
             <CreateTask toggle = {toggle} modal = {modal} save = {saveTask} />
 
-        {/* </div> */}
+        </div>
       
     </>
   )

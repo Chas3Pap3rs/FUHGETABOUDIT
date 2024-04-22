@@ -2,13 +2,13 @@
    background-color: #252524;
 }
 
-.btn.btn-outline-light.mt-3 {
+.todo-btn.btn.btn-outline-light.mt-3 {
     border: 1.5px outset black;
     font-family: "Anton", sans-serif;
     font-size: small;
 }
 
-.btn.btn-outline-light.mt-3:hover {
+.todo-btn.btn.btn-outline-light.mt-3:hover {
     filter: drop-shadow(0 0 .25em red);
     background-color: #252524;
     color: whitesmoke;
@@ -23,7 +23,7 @@
 }
 
 .task-container {
-    font-family: "Anton", sans-serif;
+    /* font-family: "Anton", sans-serif; */
 
 
     height: auto;
@@ -39,7 +39,7 @@
     box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.6);
 
     display: grid;
-    grid-auto-rows: minmax(auto, 180px);
+    grid-auto-rows: minmax(auto, 220px);
 
     /* flex: 1 0 25%;  */
     column-gap: 1em;
@@ -142,4 +142,8 @@
     
 }
 
-
+@media (max-width: 386px) {
+    .todopage-container {
+       min-width: 386px;
+    }
+}

@@ -1,5 +1,6 @@
 import React, { useState , useEffect} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import './task.css';
 
 const EditTask= ({modal, toggle, updateTask, taskObj}) => {
     const [taskName, setTaskName] = useState('');
@@ -32,7 +33,7 @@ const EditTask= ({modal, toggle, updateTask, taskObj}) => {
     }
 
     return (
-        <Modal isOpen={modal} toggle={toggle}>
+        <Modal className="task-modal" isOpen={modal} toggle={toggle}>
             <ModalHeader toggle={toggle}>Update Task</ModalHeader>
             <ModalBody>
             

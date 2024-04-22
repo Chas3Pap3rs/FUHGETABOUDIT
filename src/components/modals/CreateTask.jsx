@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-// import TodoList from '../TodoList/TodoList'
+// import TodoList from '../TodoList/TodoList';
+import './task.css';
 
 const CreateTask = ({modal, toggle, save}) => {
     const [taskName, setTaskName] = useState('')
@@ -26,7 +27,7 @@ const CreateTask = ({modal, toggle, save}) => {
 
     return (
         <>
-            <Modal isOpen={modal} toggle={toggle}>
+            <Modal className="task-modal" isOpen={modal} toggle={toggle} style={{"backgroundColor" : "#252524"}}>
                 <ModalHeader toggle={toggle}>Hit Request:</ModalHeader>
 
                 <ModalBody>
