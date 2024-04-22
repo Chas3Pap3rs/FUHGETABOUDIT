@@ -19,7 +19,7 @@ function Home() {
 
       <div>
         <p>&#40;Don't you&#41;</p>
-        <img onClick={playAudio} src="https://fontmeme.com/permalink/240419/a6f218d53b911d03f6486acb997ce446.png" alt="godfather-font" border="0" />
+        <img className="godfatherFont" onClick={playAudio} src="https://fontmeme.com/permalink/240419/a6f218d53b911d03f6486acb997ce446.png" alt="godfather-font" border="0" />
         {/* <h1 onClick={playAudio}>FUHGETABOUDIT</h1> */}
         <div className="underText">...until the job is finished.</div>
       </div>
@@ -29,7 +29,7 @@ function Home() {
 
       <div className="homeNav">
         <button className="btn btn-outline-danger">I'm Made</button>&nbsp;
-        &nbsp;<button className="btn btn-outline-warning">Join The Family</button>
+        &nbsp;<button className="btn btn-outline-warning" >Join The Family</button>
       </div>
 
       <audio ref={audioRef} src="./src/assets/audio/forget-about-it-made-with-Voicemod.mp3" preload="auto" />

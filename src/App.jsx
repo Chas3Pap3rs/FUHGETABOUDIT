@@ -1,11 +1,8 @@
-// import React, { useState, useRef } from 'react';
-// import reactLogo from './assets/images/react.svg';
-// import viteLogo from '/vite.svg';
-import './App.css';
-import TodoList from './components/TodoList/TodoList'
-import Home from './components/Home/Home'
+import TodoList from './components/TodoList/TodoList';
+import Home from './components/Home/Home';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   // const [count, setCount] = useState(0);

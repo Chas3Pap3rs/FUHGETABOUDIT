@@ -1,18 +1,23 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: center; */
   /* border: solid 1px red; */
 }
 
 .logo {
-  /* height: 6em; */
-  /* padding: 1.5em; */
-  /* will-change: filter; */
-  /* transition: filter 300ms;
-  border: solid 1px red; */
-}
+  height: auto; 
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  border: solid 1px red;
+
+  /* border-radius: 15%; */
+  width: auto;
+  margin-top: 0px;
+  margin-left: 0px;
+} 
 
 
 /* HOVER SETTINGS */
@@ -49,7 +54,7 @@ h1:hover, img:hover {
 
 /* AT-RULES */
 
-@keyframes logo-spin {
+/* @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -62,10 +67,10 @@ h1:hover, img:hover {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
+} */
 
 /* UNORGANIZED */
-.card {
+/* .card {
   padding: 2em;
   border: solid 1px red;
 }
@@ -89,4 +94,4 @@ h1 {
 
 h1:hover {
   cursor: pointer;
-}
+} */
