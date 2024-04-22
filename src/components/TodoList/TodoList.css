@@ -24,11 +24,9 @@
 
 .task-container {
     font-family: "Anton", sans-serif;
-    /* align-content: center; */
 
 
     height: auto;
-    /* min-height: 300px; */
     font-size: 18px; 
     padding-bottom: 10px;
     padding-right: 30px;
@@ -41,13 +39,13 @@
     box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.6);
 
     display: grid;
-    grid-auto-rows: minmax(auto, 100px);
+    grid-auto-rows: minmax(auto, 180px);
 
     /* flex: 1 0 25%;  */
     column-gap: 1em;
     columns: 6;
 
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     /* grid-gap: 1em; */
 
 }

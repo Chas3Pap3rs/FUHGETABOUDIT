@@ -65,7 +65,7 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
             
             </div>
 
-            <div className = "task-holder">
+            <div className = "task-holder overflow-auto">
             
                 <p className = "card-details mt-3">{taskObj.Description}</p>
 
