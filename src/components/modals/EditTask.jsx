@@ -33,23 +33,23 @@ const EditTask= ({modal, toggle, updateTask, taskObj}) => {
     }
 
     return (
-        <Modal className="task-modal" isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>Update Task</ModalHeader>
+        <Modal className="task-modal" style={{"font-family" : "Pricedown Bl, sans-serif", "fontSize" : "larger"}} isOpen={modal} toggle={toggle}>
+            <ModalHeader className="modal-head" toggle={toggle}>Plan B</ModalHeader>
             <ModalBody>
             
-                    <div className = "form-group">
-                        <label>Task Name</label>
+                    <div className = "form-group" >
+                        <label >Task Name:</label>
                         <input type="text" className = "form-control" value = {taskName} onChange = {handleChange} name = "taskName"/>
                     </div>
                     <div className = "form-group">
-                        <label>Description</label>
+                        <label>Description:</label>
                         <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
                     </div>
                 
             </ModalBody>
             <ModalFooter>
-            <Button color="warning" style={{"font-family" : "Anton, sans-serif", "background-color" : "#252524", "color" : "goldenrod"}} onClick={handleUpdate}>Get To It</Button>{' '}
-            <Button color="danger" style={{"font-family" : "Anton, sans-serif", "background-color" : "#252524", "color" : "red"}} onClick={toggle}>Fuhgetaboudit</Button>
+            <Button color="black" style={{"border" : "1.5px outset black", "backgroundColor" : "#252524", "color" : "forestgreen", "fontSize" : "larger"}} onClick={handleUpdate}>Get To It</Button>{' '}
+            <Button color="black" style={{"border" : "1.5px outset black", "backgroundColor" : "#252524", "color" : "goldenrod", "fontSize" : "larger"}} onClick={toggle}>Fuhgetaboudit</Button>
             </ModalFooter>
       </Modal>
     );

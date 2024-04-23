@@ -24,7 +24,7 @@
 
 h1:hover, img:hover {
   cursor: pointer;
-  filter: drop-shadow(0 0 .5em red);
+  /* filter: drop-shadow(0 0 .5em red); */
 }
 
 .logo:hover {

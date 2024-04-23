@@ -1,98 +1,70 @@
-import React, { useState , useEffect} from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import './task.css';
-import { Link } from 'react-router-dom'; 
 
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap'; // Import necessary components
+import { useForm, ValidationError } from '@formspree/react';
 
-function ContactForm() {
+function ContactForm({ toggle, modal }) { 
+    
+    const [state, handleSubmit] = useForm("mqkrwger");// Receive props for modal state and toggle function
+    if (state.succeeded) {
+        return <p>See you around.</p>;
+    }
 
     return (
-    //     <Modal className="contact-modal" isOpen={modal} toggle={toggle}>
-    //         <ModalHeader toggle={toggle}>Update Task</ModalHeader>
-    //         <ModalBody>
-    //         <div className = "form-group">
-    //                     <label>Email:</label>
-    //                     <input type="email" className = "form-control" placeholder="Enter your email" required/>
-    //                 </div>
-    //                 <div className = "form-group">
-    //                     <label>Title:</label>
-    //                     <input type="text" className = "form-control" value = {taskName} onChange = {handleChange} name = "taskName"/>
-    //                 </div>
-    //                 <div className = "form-group">
-    //                     <label>Description: </label>
-    //                     <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
-    //                 </div>
-                
-    //         </ModalBody>
-    //         <ModalFooter>
-    //         <Button color="warning" style={{"font-family" : "Anton, sans-serif", "background-color" : "#252524", "color" : "goldenrod"}} onClick={handleUpdate}>Get To It</Button>{' '}
-    //         <Button color="danger" style={{"font-family" : "Anton, sans-serif", "background-color" : "#252524", "color" : "red"}} onClick={toggle}>Fuhgetaboudit</Button>
-    //         </ModalFooter>
-    //   </Modal>
-
-    <>
-    <Modal>
-    <ModalBody>
-        <div>
-            <form className="container-fluid" 
-            action="https://formspree.io/f/mkndrkkq"
-            method="POST">
-              <div className="form-group row">
-                <div className="col col-lg-6 offset-lg-3">
-                    <h6><label className="container-fluid p-0">
-                      Name:
-                        <input type="text"
-                        name="name" id="full-name"
-                            className="form-control" 
-                            placeholder="Enter your full name here"
-                            required></input>
-                    </label></h6>
-              
-                </div>
-              </div>
-
-              <div className="form-group row">
-                <div className="col col-lg-6 offset-lg-3">
-                  <h6><label className="container-fluid p-0">
-                    Email:
-                  <input type="email"
-                    id="email"
-                    name="_replyto" 
-                    className="form-control"  
-                    placeholder="Enter your email" 
-                    required></input>
-                  </label></h6>
-                </div>
-              </div>
-
-              <div className="form-group row">
-                  <div className="col col-lg-6 offset-lg-3">
-                      <h6><label>
-                          Message:
-                      </label></h6>
-                      <textarea className="form-control"
-                              name="message"
-                              id="textarea" 
-                              rows="3"
-                              required></textarea>
-                  </div>
-              </div>
-
-              <div className="form-group row">
-                  <div className="col col-lg-6 offset-lg-3">
-                      <button type="submit" 
-                      className="btn btn-outline-dark">
-                          Submit
-                      </button>            
-                  </div>
-              </div>
-            </form>
-          </div>
-          </ModalBody>
-          </Modal>
+    
+    <Modal isOpen={true} toggle={toggle} style={{"fontFamily" : "Pricedown Bl, sans-serif", "fontSize" : "larger"}}>
+      <ModalHeader className="modal-head" toggle={toggle}>You come to me...</ModalHeader>
+      <ModalBody >
+        <Form   action="https://formspree.io/f/mqkrwger"
+  method="POST">
+          <FormGroup>
+            <Label htmlFor="name">First Name:</Label>
+            <Input type="text" name="first-name" id="first-name" placeholder="Enter your first name" required/>
+            
         
-    </>
-    );
+            <Label htmlFor="name">Last Name:</Label>
+            <Input type="text" name="last-name" id="last-name" placeholder="Enter your last name" required/>
+            
+          </FormGroup>
+          <ValidationError 
+            prefix="Name" 
+            field="name"
+            errors={state.errors}
+          />
+          <FormGroup>
+            <Label for="email">Email:</Label>
+            <Input type="email" name="email" id="email" placeholder="Enter your email" required/>
+          </FormGroup>
+          
+          <ValidationError 
+                prefix="Email" 
+                field="email"
+                errors={state.errors}
+            />
+
+          <FormGroup>
+            <Label for="message">Request:</Label>
+            <Input type="textarea" name="message" id="message" placeholder="Write your message" style={{"minHeight" : "200px"}} required/>
+          </FormGroup>
+
+        <ValidationError 
+            prefix="Message" 
+            field="message"
+            errors={state.errors}
+             />
+
+          <Button color="black" type="submit" disabled={state.submitting} style={{"border" : "1.5px outset black", "color" : "goldenrod", "fontSize" : "larger"}}>
+            Please, Godfather..
+          </Button>
+
+        </Form>
+      </ModalBody>
+      <ModalFooter>
+        <Button color="black" style={{"border" : "1.5px outset black", "color" : "darkred", "fontSize" : "larger"}} onClick={toggle}>Cancel</Button>
+      </ModalFooter>
+    </Modal>
+
+    
+  );
 }
 
 export default ContactForm;

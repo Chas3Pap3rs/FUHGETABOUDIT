@@ -7,6 +7,7 @@
     padding: 2rem;
     text-align: center;
     border: solid 1px red; */
+    min-height: 860px;
 }
 
 .home-h1 {
@@ -15,17 +16,23 @@
   }
 
 .home-p {
+    margin-top: 5px;
     text-align: left;
     /* border: solid 1px white; */
-    font-family: "Anton", sans-serif;
+    font-family: 'Pricedown Bl', sans-serif;
+    font-size: x-large;
     padding-left: 35px;
 }
 
 .home-underText {
     text-align: right;
     /* border: solid 1px white; */
-    font-family: "Anton", sans-serif;
+    font-family: 'Pricedown Bl', sans-serif;
+    font-size: x-large;
+    /* font-style: oblique; */
+    /* font-style: unset; */
     padding-right: 30px;
+    margin-top: 12.5px;
 }
 
 .home-logo {
@@ -33,19 +40,24 @@
     /* border: dashed 1px yellow; */
     border-radius: 15%;
     width: 100%;
-
-    padding: 1.5em;
-    margin-top: 10%;
+    padding: .5em;
+    margin-top: 7.5%;
+    margin-bottom: 2.5%;
     will-change: filter;
     transition: filter 300ms;
+}
 
-
+.home-logo:hover {
+    /* filter: drop-shadow(0 0 .5em red); */
+    border: 1.5px inset black;
+    box-shadow: 3px 4px 4px 3px rgba(0,0,0,0.6), 4px 3px 3px 4px rgba(0.6,0,0,0);
+    padding: 0;
 }
 
 .home-content-container, 
 .homeNav {
     /* border: solid 1px goldenrod; */
-    max-width: 810px;
+    max-width: 75%;
     text-align: center;
     margin: 0 auto;
 }
@@ -53,14 +65,23 @@
 @media (max-width: 365px) {
     .home-content-container,
     .homeNav {
+       width: 365px;
        min-width: 365px;
     }
 }
 
-@media (min-width: 700px) {
+@media (max-width: 600px) {
     .home-content-container,
     .homeNav {
-       max-width: 700px;
+       min-width: 95%;
+    }
+}
+
+@media (min-width: 600px) {
+    .home-content-container,
+    .homeNav {
+        width: 90%;
+       max-width: 456px;
     }
 }
 
@@ -71,14 +92,22 @@
 } 
 
 .home-godfatherFont:hover {
-  cursor: pointer;
-  filter: drop-shadow(0 0 .5em red);
+    cursor: pointer;
+    border: solid 1px black;
+    padding: 5px;
+    width: 90%;
+    border: 1.5px inset black;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 10px 5px rgba(0.6,0,0,0),
+                inset 5px 10px 0px 0px rgba(0,0,0,0.6);
+    /* filter: invert(10%); */
+    background-color: #272727;
 }
 
 .home-login-btn.btn, .home-contact-btn.btn {
     border: 1.5px outset black;
-    font-family: "Anton", sans-serif;
-    font-size: small;
+    font-family: 'Pricedown Bl', sans-serif;
+    font-size: large;
   }
   
   .home-login-btn.btn:hover {
@@ -86,7 +115,7 @@
     background-color: #252524;
     border: 1.5px inset black;
     box-shadow: inset 0px 0px 2.5px 1.25px rgba(0,0,0,0.6);
-    color: red;
+    color: forestgreen;
   }
   
   .home-contact-btn.btn:hover {

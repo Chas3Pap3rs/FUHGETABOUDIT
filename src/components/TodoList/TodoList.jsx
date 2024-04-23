@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './TodoList.css'
 // import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import CreateTask from '../modals/CreateTask.jsx';
+import ContactForm from '../modals/ContactForm.jsx';
 import Card from '../Card/Card.jsx';
 import { Link } from 'react-router-dom'; 
 
@@ -50,18 +51,37 @@ function TodoList() {
     setTaskList(taskList)
   }
 
+  const [modalOpen, setModalOpen] = useState(false); // State for ContactForm modal
+
+  const toggleContactForm = () => {
+
+    console.log("Toggling modal:", !modalOpen); // Log before state update
+    setModalOpen(!modalOpen); // Toggle modal visibility
+    console.log("Modal open state:", modalOpen);
+    };
+
   return (
     <>
         <div className = "todopage-container">
         
         <Link to="/" className="todo-home-btn btn" type="button">Home</Link>
+        &nbsp;
+        {/* <Link to="/contact" className="home-contact-btn btn" type="button">Contact</Link> */}
+        <button
+            className="home-contact-btn btn"
+            type="button"
+            onClick={toggleContactForm} // Trigger ContactForm toggle function
+          >
+            Contact
+          </button>
+        
      
 
-      <div className="todo-heading container text-center">
+      <div className="todo-heading container-fluid text-center">
       {/* <img src='./src/assets/images/fuhgetaboudit-logo-1.png' className="todo-logo" alt="site logo" /> */}
         <div>
 
-          <img className="hitlist-heading" src="https://fontmeme.com/permalink/240419/9579a4fe14db42b26713205df4506f8b.png" alt="hitlist-godfather-font" />
+          <img className="hitlist-heading" src="https://fontmeme.com/permalink/240423/5cbdcea6fbcdc215403044f801388d2c.png" alt="hitlist-godfather-font" />
           </div>
 
       <div>
@@ -82,12 +102,17 @@ function TodoList() {
 
                 {/* {taskList && taskList.map((obj) => <li>{obj.Name}: {obj.Description} </li>)} */}
 
+                {/* <div className="todo-background-logo"> */}
+                    {/* <img src='./src/assets/images/fuhgetaboudit-logo-1.png' className="home-logo" alt="site logo" style={{ "background-image" : "url({{ static('/Users/chasepoulton/Desktop/IT Bootcamp - Software Engineering - Practice and Projects/FUHGETABOUDIT/fuhgetaboudit/src/assets/images/site-logo-transparentback-fuhgetaboudit-1.png') }});"}}/> */}
+                  {/* </div> */}
+
                 {taskList && taskList.map((obj , index) => 
                   <Card key={index} taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/> 
                 )}
             </div>
 
             <CreateTask toggle = {toggle} modal = {modal} save = {saveTask} />
+            {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
 
         </div>
       

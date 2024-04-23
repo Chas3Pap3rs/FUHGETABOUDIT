@@ -14,21 +14,28 @@
     /* width: 100%; */
     /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
     /* gap: 1em;  */
-
-   
-
 }
 
-@media (max-width: 485px) {
+@media (max-width: 670px) {
     .card-wrapper {
        width: 100%;
+       min-width: 300px;
     }
+
+
 }
 
 @media (min-width: 1300px) {
     .card-wrapper {
        width: 100%;
        max-width: 1265px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .card-wrapper {
+       width: 100%;
+       max-width: 2000px;
     }
 }
 
@@ -42,8 +49,8 @@
 
 .card-top {
     width: 100%;
-    height: 20%;
-    min-height: 35px;
+    height: 2.5%;
+    /* min-height: 35px; */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; 
     opacity: 100%;
@@ -51,13 +58,14 @@
     /* border: dashed 5px red; */
     display: flex;
     justify-items: flex-end;
-    padding: 10px;
-    font-size: large;
+    padding-top:8px;
+    padding-right: 10px;
+    font-size: auto;
     /* background-color: #252524; */
 }
 
 .task-holder {
-    position: absolute;
+    position: relative;
     top: 5%;
     left: 0;
 }
@@ -67,11 +75,19 @@
     /* border: dotted 10px pink; */
     width: 100%;
     
+    font-family: 'Pricedown Bl', sans-serif;
+    font-size: x-large;
+    color: goldenrod;
+    padding-bottom: 10%;
+    padding-top: 0%;
+    overflow-y: hidden;
+    
      
 }
 
 .card-details {
-    font-family: "Helvetica Neue, Arial", "Helvetica";
+    font-family: 'Pricedown Bl', sans-serif;
+    font-size: larger;
     overflow-y: auto;
     height: 140px;
     width: 100%;
@@ -83,7 +99,8 @@
     border-bottom: 1.5px inset black;
     border-right: 1px inset black;
     padding: 15px;
-    
+    padding-top: 25px;  
+    margin-bottom: 5px;
 }
 
 
@@ -94,6 +111,7 @@ p {
     padding-bottom: 5px;
     color: whitesmoke;
     font-size: medium;
+    
 }
 
 i {
@@ -102,10 +120,17 @@ i {
 
 .fa-solid.fa-toilet {
     margin-left: 7.5px;
+    margin-right: 2.5px;
 }
 
 .fa-solid.fa-pencil {
     margin-right: 7.5px;
+}
+
+.fa-solid.fa-toilet,
+.fa-solid.fa-pencil,
+.fa-solid.fa-crosshairs {
+    margin-top: 3px;
 }
 
 .edit-buttons {
