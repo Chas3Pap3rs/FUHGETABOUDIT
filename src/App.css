@@ -110,3 +110,7 @@ h1 {
 h1:hover {
   cursor: pointer;
 } */
+
+.alert{
+  width: 1000px;
+}

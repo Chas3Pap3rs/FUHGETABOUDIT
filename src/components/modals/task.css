@@ -50,8 +50,50 @@
 }
 
 .passphrase-form {
-    display: flex;
+display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
 }
+
+.custom-alert {
+    background-color: #252524; /* Same background as modal content */
+    color: darkred;
+    padding: 15px; /* Add some padding for content spacing */
+    border-radius: 10px; /* Consistent border radius */
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.6); /* Similar shadow effect */
+    display: flex; /* Allow for additional styling using flexbox */
+    align-items: center; /* Vertically center message content */
+    width: 60%;
+    height: 25%;
+    margin: auto;
+    font-family: 'Pricedown Bl', sans-serif;
+    position: fixed;  /* Added position: fixed */
+    top: 25%;  /* Position the alert vertically at 50% */
+    left: 50%;   /* Position the alert horizontally at 50% */
+    transform: translate(-50%, -50%);  /* Center the alert in the viewport */
+  
+    z-index: 9999;
+    
+}
+
+.custom-alert-info { /* Optional style for info alerts */
+    border: 1px solid #ddd; /* Light border for info alerts */
+  }
+  
+  .custom-alert-error { /* Optional style for error alerts */
+    border: 1px solid #f5c6cb; /* Red border for error alerts */
+    color: #721c24; /* Red text for error alerts */
+  }
+  
+  .custom-alert p { /* Style the message paragraph */
+    margin: 0; /* Remove default margin for better spacing */
+    font-size: x-large; /* Consistent font size */
+    color: royalblue;
+  }
+
+  .alert-close {
+    border: 1.5px outset black;
+    font-family: 'Pricedown Bl', sans-serif;
+    font-size: large;
+  }

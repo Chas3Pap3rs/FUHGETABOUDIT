@@ -4,6 +4,7 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import ContactForm from '../modals/ContactForm';
 import PassphraseForm from '../modals/PassphraseForm';
+import CustomAlert from '../modals/CustomAlert';
 
 function Home() {
 
@@ -22,8 +23,21 @@ function Home() {
     setModalOpen(!modalOpen); // Toggle modal visibility
     };
 
+  // function AccessPass() {
+  //   alert('Hint: "Our thing" (or "this thing of ours")');
+  // }
+
+  const [showAlert, setShowAlert] = useState(false);
+
   function AccessPass() {
-    alert('Hint: "Our thing" (or "this thing of ours")');
+    const message = 'Hint: "Our thing" (or "this thing of ours")';
+    setShowAlert(true); // Set state to show the alert
+
+    const handleCloseAlert = () => {
+      // Perform any actions on close (optional)
+      setShowAlert(false); // Update state to hide the alert
+    };
+    return <CustomAlert message={message} onClose={handleCloseAlert}/>; // Optionally return the component (might not be necessary)
   }
 
   //Passphrase functionality
@@ -49,12 +63,14 @@ function Home() {
 
     <>
 
+    {showAlert && <CustomAlert message="Hint: &quot;Our thing&quot; (or &quot;this thing of ours&quot;)" />}
+
     <div className="home-content-container container-fluid">
 
 
-      <a href="#" target="_blank" onClick={(event) => {AccessPass(); event.preventDefault();}}>
-        <img src='./src/assets/images/fuhgetaboudit-logo-1.png' className="home-logo" alt="site logo" />
-      </a>
+    <a href="#" target="_blank" onClick={(event) => { event.preventDefault(); AccessPass(); }}>
+          <img src="./src/assets/images/fuhgetaboudit-logo-1.png" className="home-logo" alt="site logo" />
+        </a>
 
 
       <div className="home-logo-sign">
@@ -100,6 +116,7 @@ function Home() {
       
       {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
       {showPassphraseForm && (<PassphraseForm onSubmit={handlePassphraseSubmit} />)}
+      
 
       
           
