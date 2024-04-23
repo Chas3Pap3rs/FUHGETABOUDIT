@@ -12,7 +12,9 @@
   "dependencies": {
     "@formspree/react": "^2.5.1",
     "bootstrap": "^5.3.3",
+    "lucide-react": "^0.372.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "reactstrap": "^9.2.2"

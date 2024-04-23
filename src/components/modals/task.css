@@ -48,3 +48,10 @@
     font-size: small;
     background-color: #252524; */
 }
+
+.passphrase-form {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}

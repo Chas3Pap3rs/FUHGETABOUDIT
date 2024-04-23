@@ -4,18 +4,39 @@ import { useForm, ValidationError } from '@formspree/react';
 
 function ContactForm({ toggle, modal }) { 
     
-    const [state, handleSubmit] = useForm("mqkrwger");// Receive props for modal state and toggle function
-    if (state.succeeded) {
-        return <p>See you around.</p>;
-    }
+    const [state, handleSubmit] = useForm("mqkrwwag");// Receive props for modal state and toggle function
+    // if (state.succeeded) {
+    //     return <p>See you around.</p>;
+    // }
+    const handleFormSubmit = (event) => {
+      event.preventDefault();
+      handleSubmit(event)
+        .then((response) => {
+          // Successful form submission
+          console.log('Form submission successful:', response);
+          alert("Send successfull, we'll be in touch");
+          alert("Alright, alright! I'll give you the password... It's Cosa Nostra. Yeah, that's right: Cosa Nostra. Don't ever say I never did anything for ya.")
+          toggle(); // Close the modal
+        })
+        .catch((error) => {
+          console.error('Error submitting form:', error);
+          alert('There was an error sending your message. Please try again.');
+        });
+    };
+
+    
+
+    // console.log('Form state:', state);
 
     return (
     
     <Modal isOpen={true} toggle={toggle} style={{"fontFamily" : "Pricedown Bl, sans-serif", "fontSize" : "larger"}}>
       <ModalHeader className="modal-head" toggle={toggle}>You come to me...</ModalHeader>
       <ModalBody >
-        <Form   action="https://formspree.io/f/mqkrwger"
-  method="POST">
+        <Form 
+        // action="https://formspree.io/f/mqkrwwag"
+              method="POST"
+              onSubmit={handleFormSubmit}>
           <FormGroup>
             <Label htmlFor="name">First Name:</Label>
             <Input type="text" name="first-name" id="first-name" placeholder="Enter your first name" required/>

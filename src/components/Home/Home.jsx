@@ -3,26 +3,45 @@ import './Home.css';
 // import TodoList from '../TodoList/TodoList';
 import { Link } from 'react-router-dom';
 import ContactForm from '../modals/ContactForm';
+import PassphraseForm from '../modals/PassphraseForm';
 
 function Home() {
+
+  //Audio plays when clicking logo font
   const audioRef = useRef(null); // useRef hook to store audio element
 
   const playAudio = () => {
   audioRef.current.play(); // Play the audio when h1 is clicked
   };
 
+  // Opens contact modal  
   const [modalOpen, setModalOpen] = useState(false); // State for ContactForm modal
 
   const toggleContactForm = () => {
 
-    console.log("Toggling modal:", !modalOpen); // Log before state update
     setModalOpen(!modalOpen); // Toggle modal visibility
-    console.log("Modal open state:", modalOpen);
     };
 
   function AccessPass() {
     alert('Hint: "Our thing" (or "this thing of ours")');
   }
+
+  //Passphrase functionality
+
+  const [showPassphraseForm, setShowPassphraseForm] = useState(false);
+
+  const handleShowPassphraseForm = () => {
+    setShowPassphraseForm(true);
+  };
+
+  const handlePassphraseSubmit = (enteredPassphrase) => {
+    if (enteredPassphrase === 'Cosa Nostra') { // Replace with your actual passphrase
+      console.log('Access granted');
+      // Navigate to Todo page (code goes here)
+    } else {
+      alert('I smell a rat...');
+    }
+  };
 
   return (
     
@@ -33,7 +52,7 @@ function Home() {
     <div className="home-content-container container-fluid">
 
 
-      <a href="#" target="_blank" onClick={AccessPass}>
+      <a href="#" target="_blank" onClick={(event) => {AccessPass(); event.preventDefault();}}>
         <img src='./src/assets/images/fuhgetaboudit-logo-1.png' className="home-logo" alt="site logo" />
       </a>
 
@@ -41,10 +60,8 @@ function Home() {
       <div className="home-logo-sign">
         <p className="home-p">&#40;Don't you&#41;</p>
         <img className="home-godfatherFont" onClick={playAudio} 
-        // src="https://fontmeme.com/permalink/240419/a6f218d53b911d03f6486acb997ce446.png"
         src="https://fontmeme.com/permalink/240423/3037bed5fa1fcb450d00cc3d72788e9d.png"
         alt="home-godfather-font" border="0" />
-        {/* <h1 onClick={playAudio}>FUHGETABOUDIT</h1> */}
         <div className="home-underText">...until the job is finished.</div>
       </div>
     </div>
@@ -53,12 +70,22 @@ function Home() {
 
       <div className="homeNav">
 
-        {/* <button className="home-login-btn btn">I'm Made</button> */}
-        <Link to="/todo-list" className="home-login-btn btn" type="button">I'm Made</Link>
+
+        <Link
+          to="/todo-list" // Still set the target URL for potential future use
+          className="home-login-btn btn"
+          type="button"
+          onClick={(event) => {
+            event.preventDefault(); // Prevent default navigation
+            handleShowPassphraseForm();
+          }}>
+            I'm Made
+        </Link>
+
+
+        &nbsp;
+        &nbsp;
         
-        &nbsp;
-        &nbsp;
-        {/* <Link to="/contact" className="home-contact-btn btn" type="button">Join The Family</Link> */}
         <button
             className="home-contact-btn btn"
             type="button"
@@ -71,16 +98,10 @@ function Home() {
 
       <audio ref={audioRef} src="./src/assets/audio/forget-about-it-made-with-Voicemod.mp3" preload="auto" />
       
-      {/* Render ContactForm conditionally based on modalOpen state */}
       {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
-      {/* {modalOpen ? <ContactForm toggle={toggleContactForm} modal={modalOpen} /> : null} */}
+      {showPassphraseForm && (<PassphraseForm onSubmit={handlePassphraseSubmit} />)}
 
-      {/* <div className="popup" id="popup">
-        <p>This is a popup!</p>
-        <p>Overlay uses <b>:before</b> and <b>:after</b> pseudo-classes.</p>
-        <p>Website will still remain visible behind this popup.</p>
-        <a href="#" onClick="hide('popup')">Close</a>
-      </div> */}
+      
           
     </>
   )
