@@ -25,13 +25,12 @@
     border-bottom: 1.5px inset black;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    /* border-top-right-radius: 5px; */
-    /* border-bottom-right-radius: 10px; */
 }
 
 .modal-title {
     font-family: 'Pricedown Bl', sans-serif;
     color: goldenrod;
+   
 }
 
 .modal-header {
@@ -42,12 +41,12 @@
     border: none;
 }
 
-.modal-edit-btn, .modal-trash-btn {
-    /* border: 1.5px outset black;
+/* .modal-edit-btn, .modal-trash-btn {
+    border: 1.5px outset black;
     font-family: "Anton", sans-serif;
     font-size: small;
-    background-color: #252524; */
-}
+    background-color: #252524;
+} */
 
 .passphrase-form {
 display: flex;
@@ -97,3 +96,50 @@ display: flex;
     font-family: 'Pricedown Bl', sans-serif;
     font-size: large;
   }
+
+  .passphrase-form-container {
+    background-color: #252524;
+    padding: 20px;
+    border: 1.5px inset black;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.6);
+
+    width: 60%;
+    min-width: 289px;
+    height: 25%;
+    margin: auto;
+    font-family: 'Pricedown Bl', sans-serif;
+    position: fixed;  /* Added position: fixed */
+    top: 25%;  /* Position the alert vertically at 50% */
+    left: 50%;   /* Position the alert horizontally at 50% */
+    transform: translate(-50%, -50%);  /* Center the alert in the viewport */
+
+    z-index: 1000; /* Ensure it's above the blurred background */
+  }
+
+  .passphrase-control {
+    display: flex;
+    justify-content: center; /* Horizontally center the buttons */
+    margin-top: 1px; /* Add some margin for spacing */
+  }
+
+  .passphrase-submit-btn.btn, .passphrase-close-btn.btn {
+    border: 1.5px outset black;
+    font-family: 'Pricedown Bl', sans-serif;
+    font-size: x-large;
+    margin: 5px;
+  }
+
+  .passphrase-submit-btn.btn:hover {
+    background-color: #252524;
+    border: 1.5px inset black;
+    box-shadow: inset 0px 0px 2.5px 1.25px rgba(0,0,0,0.6);
+    color: forestgreen;
+}
+
+.passphrase-close-btn.btn:hover {
+    background-color: #252524;
+    border: 1.5px inset black;
+    box-shadow: inset 0px 0px 2.5px 1.25px rgba(0,0,0,0.6);
+    color: darkred;
+}

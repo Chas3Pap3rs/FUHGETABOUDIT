@@ -47,7 +47,7 @@ h1:hover, img:hover {
 
 /* .btn.btn-outline-danger, .btn.btn-outline-warning  {
   border: 1.5px outset black;
-  font-family: "Anton", sans-serif;
+  fontFamily: "Anton", sans-serif;
   font-size: small;
 }
 
@@ -104,7 +104,7 @@ span {
 h1 {
   user-select: none;
   border: solid 1px red;
-  font-family: "Anton", sans-serif;
+  fontFamily: "Anton", sans-serif;
 }
 
 h1:hover {

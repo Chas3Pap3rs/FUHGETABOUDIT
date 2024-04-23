@@ -9,15 +9,10 @@
 }
 
 .todo-btn.btn.btn-outline-light.mt-3:hover {
-    /* filter: drop-shadow(0 0 .25em red);
-    background-color: #252524;
-    color: whitesmoke; */
-
     background-color: #252524;
     border: 1.5px inset black;
     box-shadow: inset 0px 0px 2.5px 1.25px rgba(0,0,0,0.6);
-    color: goldenrod;
-    
+    color: goldenrod;   
 }
 
 .todo-home-btn.btn {
@@ -42,7 +37,6 @@
 }
 
 .task-container {
-    /* font-family: "Anton", sans-serif; */
     z-index: +1;
 
     height: auto;
@@ -56,63 +50,17 @@
     border-radius: 10px;
     background-color: #252524;
     box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.6);
-
     display: grid;
     grid-auto-rows: minmax(auto, 220px);
-
-    /* flex: 1 0 25%;  */
     column-gap: 1em;
     columns: 6;
-
-    /* background-image: url({{ static('/Users/chasepoulton/Desktop/IT Bootcamp - Software Engineering - Practice and Projects/FUHGETABOUDIT/fuhgetaboudit/src/assets/images/site-logo-transparentback-fuhgetaboudit-1.png') }}); */
-
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* grid-gap: 1em; */
 
-      &:empty:not(:is(:before, :after)) {
-    display: none;
-  }
+    &:empty:not(:is(:before, :after)) {
+        display: none;
+    }
 
 }
-
-/* @media (min-width: 1300px) {
-    .task-container {
-       width: 100%;
-       max-width: 1265px;
-    }
-} */
-
-
-/* @media (max-width: 1800px) {
-    .task-container {
-        columns: 5;
-    }
-}
-
-@media (max-width: 1400px) {
-    .task-container {
-        columns: 4;
-    }
-}
-
-@media (max-width: 992px) {
-    .task-container {
-        columns: 3;
-    }
-}
-
-@media (max-width: 768px) {
-    .task-container {
-        columns: 2;
-    }
-}
-
-@media (max-width: 443px) {
-    .task-container {
-        columns: 1;
-        column-gap: 3em;
-    }
-} */
 
 
 .logoTodoPage {
@@ -123,7 +71,6 @@
     margin-left: 20px;
 
     height:auto;
-    /* border: dashed 1px yellow; */
     border-radius: 15%;
     width: 100%;
 
@@ -147,7 +94,6 @@
 
 
 .hitlist-heading {
-    /* justify-content: center; */
     width: 20%;
     aspect-ratio: auto;
     max-height: 80px;
@@ -171,17 +117,14 @@
     min-height: 100px;
     margin: 10px;
     display: grid;
-    align-content: center;
-    /* border: dashed 3px red; */
-    
+    align-content: center;   
 }
 
 
 .logo-container-todo {
     height: 125px;
     width: 125px;
-    border: solid 1px yellow;
-    
+    border: solid 1px yellow;   
 }
 
 @media (max-width: 386px) {
@@ -192,33 +135,14 @@
 
 
 .todo-logo {
-    /* border: dashed 1px yellow; */
     border-radius: 15%;
     width: 30%;
     height: auto;
-
     padding: 1.5em;
     margin-top: 10%;
     will-change: filter;
     transition: filter 300ms;
     position: relative;
     justify-content: left;
-}
-
-/* .todo-background-logo {
-    position: fixed center;
-    object-fit: cover;
-    z-index: 0;
-    background-image: url({{ static('/Users/chasepoulton/Desktop/IT Bootcamp - Software Engineering - Practice and Projects/FUHGETABOUDIT/fuhgetaboudit/src/assets/images/site-logo-transparentback-fuhgetaboudit-1.png') }});
-
-} */
-
-.todo-background-logo img {
-    /* position: absolute;
-    top: 50%;
-    left: 50%; */
-    /* transform: translate(-50%, -50%); Alternative for centering
-    width: 200px; Adjust width as needed
-    height: 150px; Adjust height as needed */
 }
 

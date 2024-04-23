@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 import './Home.css';
-// import TodoList from '../TodoList/TodoList';
 import { Link } from 'react-router-dom';
 import ContactForm from '../modals/ContactForm';
 import PassphraseForm from '../modals/PassphraseForm';
@@ -8,14 +7,14 @@ import CustomAlert from '../modals/CustomAlert';
 
 function Home() {
 
-  //Audio plays when clicking logo font
+  //Audio play functionality
   const audioRef = useRef(null); // useRef hook to store audio element
 
   const playAudio = () => {
   audioRef.current.play(); // Play the audio when h1 is clicked
   };
 
-  // Opens contact modal  
+  // Contact form functionality
   const [modalOpen, setModalOpen] = useState(false); // State for ContactForm modal
 
   const toggleContactForm = () => {
@@ -23,11 +22,13 @@ function Home() {
     setModalOpen(!modalOpen); // Toggle modal visibility
     };
 
-  // function AccessPass() {
-  //   alert('Hint: "Our thing" (or "this thing of ours")');
-  // }
-
+  
+  // Custom alert functionality 
   const [showAlert, setShowAlert] = useState(false);
+
+  const toggleAlert = () => {
+    setShowAlert(!showAlert); // Toggle the state to show/hide the alert
+  };
 
   function AccessPass() {
     const message = 'Hint: "Our thing" (or "this thing of ours")';
@@ -37,7 +38,7 @@ function Home() {
       // Perform any actions on close (optional)
       setShowAlert(false); // Update state to hide the alert
     };
-    return <CustomAlert message={message} onClose={handleCloseAlert}/>; // Optionally return the component (might not be necessary)
+    return showAlert && <CustomAlert message={message} onClose={handleCloseAlert} />;
   }
 
   //Passphrase functionality
@@ -46,6 +47,10 @@ function Home() {
 
   const handleShowPassphraseForm = () => {
     setShowPassphraseForm(true);
+  };
+
+  const togglePassphraseForm = () => {
+    setShowPassphraseForm(!showPassphraseForm);
   };
 
   const handlePassphraseSubmit = (enteredPassphrase) => {
@@ -62,8 +67,13 @@ function Home() {
 
 
     <>
-
-    {showAlert && <CustomAlert message="Hint: &quot;Our thing&quot; (or &quot;this thing of ours&quot;)" />}
+    {(showAlert || showPassphraseForm) && <div className="blur-background" />}
+    {showAlert && (
+        <CustomAlert
+          message="Hint: &quot;Our thing&quot; (or &quot;this thing of ours&quot;)"
+          onClose={toggleAlert} // Pass the toggleAlert function to handle closing the alert
+        />
+      )}
 
     <div className="home-content-container container-fluid">
 
@@ -115,7 +125,8 @@ function Home() {
       <audio ref={audioRef} src="./src/assets/audio/forget-about-it-made-with-Voicemod.mp3" preload="auto" />
       
       {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
-      {showPassphraseForm && (<PassphraseForm onSubmit={handlePassphraseSubmit} />)}
+      {/* {showPassphraseForm && (<PassphraseForm onSubmit={handlePassphraseSubmit} />)} */}
+      {showPassphraseForm && <PassphraseForm onSubmit={handlePassphraseSubmit} onClose={togglePassphraseForm} />}
       
 
       

@@ -1,37 +1,43 @@
-
+import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap'; // Import necessary components
 import { useForm, ValidationError } from '@formspree/react';
 
+import CustomAlert from './CustomAlert';
+
+
 function ContactForm({ toggle, modal }) { 
     
-    const [state, handleSubmit] = useForm("mqkrwwag");// Receive props for modal state and toggle function
-    // if (state.succeeded) {
-    //     return <p>See you around.</p>;
-    // }
-    const handleFormSubmit = (event) => {
-      event.preventDefault();
-      handleSubmit(event)
-        .then((response) => {
-          // Successful form submission
-          console.log('Form submission successful:', response);
-          alert("Send successfull, we'll be in touch");
-          alert("Alright, alright! I'll give you the password... It's Cosa Nostra. Yeah, that's right: Cosa Nostra. Don't ever say I never did anything for ya.")
-          toggle(); // Close the modal
-        })
-        .catch((error) => {
-          console.error('Error submitting form:', error);
-          alert('There was an error sending your message. Please try again.');
-        });
-    };
+  const [state, handleSubmit] = useForm("mqkrwwag"); // Receive props for modal state and toggle function
+  const [showFirstAlert, setShowFirstAlert] = useState(false);
+  const [showSecondAlert, setShowSecondAlert] = useState(false);
 
-    
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await handleSubmit(event);
+      // Successful form submission
+      setShowFirstAlert(true);
+    } catch (error) {
+      // Error submitting form
+      alert('There was an error sending your message. Please try again.');
+    }
+  };
 
-    // console.log('Form state:', state);
+  const handleFirstAlertClose = () => {
+    setShowFirstAlert(false);
+    setShowSecondAlert(true);
+  };
 
-    return (
-    
+  const handleSecondAlertClose = () => {
+    setShowSecondAlert(false);
+    toggle(); // Close the modal
+  };
+
+  return (
+  <>
     <Modal isOpen={true} toggle={toggle} style={{"fontFamily" : "Pricedown Bl, sans-serif", "fontSize" : "larger"}}>
       <ModalHeader className="modal-head" toggle={toggle}>You come to me...</ModalHeader>
+      
       <ModalBody >
         <Form 
         // action="https://formspree.io/f/mqkrwwag"
@@ -73,16 +79,32 @@ function ContactForm({ toggle, modal }) {
             errors={state.errors}
              />
 
-          <Button color="black" type="submit" disabled={state.submitting} style={{"border" : "1.5px outset black", "color" : "goldenrod", "fontSize" : "larger"}}>
+          <Button className="home-contact-btn btn" color="black" type="submit" disabled={state.submitting} style={{"color" : "goldenrod"}}>
             Please, Godfather..
           </Button>
 
         </Form>
       </ModalBody>
       <ModalFooter>
-        <Button color="black" style={{"border" : "1.5px outset black", "color" : "darkred", "fontSize" : "larger"}} onClick={toggle}>Cancel</Button>
+        <Button className="passphrase-close-btn btn" color="black" style={{"color" : "darkred"}} onClick={toggle}>Cancel</Button>
       </ModalFooter>
     </Modal>
+
+    {showFirstAlert && (
+        <CustomAlert
+          message="Send successful, we'll be in touch"
+          onClose={handleFirstAlertClose}
+        />
+      )}
+
+      {showSecondAlert && (
+        <CustomAlert
+          message="Alright, alright! I'll give you the password... It's Cosa Nostra. Yeah, that's right: Cosa Nostra. Don't ever say I never did anything for ya."
+          onClose={handleSecondAlertClose}
+        />
+      )}
+
+</>
 
     
   );
