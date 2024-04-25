@@ -1,57 +1,19 @@
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
-// function PassphraseForm({ onSubmit }) {
-//     const [passphrase, setPassphrase] = useState(''); // State for entered passphrase
-//     const navigate = useNavigate(); // Get navigate function
-  
-//     const handlePassphraseChange = (event) => {
-//       setPassphrase(event.target.value);
-//     };
-  
-//     const handleSubmit = (event) => {
-//       event.preventDefault();
-//       if (passphrase === 'Cosa Nostra') { // Replace with your actual passphrase
-//         console.log('Access granted');
-//         navigate('/todo-list'); // Navigate to Todo page
-//       } else {
-//         alert('I smell a rat...');
-//       }
-//     };
-
-//   return (
-//     <form className="passphrase-form" onSubmit={handleSubmit}>
-//       <input
-//         type="password" // Use password type for security
-//         value={passphrase}
-//         onChange={handlePassphraseChange}
-//         placeholder="Enter Passphrase"
-//         required
-//       />
-
-//         &nbsp;
-//         &nbsp;
-
-//       <button type="submit" className="home-login-btn btn">
-//         Let me in..
-//       </button>
-//     </form>
-//   );
-// }
-
-// export default PassphraseForm;
-
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CustomAlert from './CustomAlert';
 
 
-function PassphraseForm({ onClose }) {
+
+
+function PassphraseForm({closeIt}) {
   const [passphrase, setPassphrase] = useState(''); // State for entered passphrase
   const navigate = useNavigate(); // Get navigate function
 
+  
+
   const handlePassphraseChange = (event) => {
     setPassphrase(event.target.value);
+    console.log('type');
   };
 
   const handleSubmit = (event) => {
@@ -59,11 +21,15 @@ function PassphraseForm({ onClose }) {
     if (passphrase === 'Cosa Nostra') {
       console.log('Access granted');
       navigate('/todo-list'); // Navigate to Todo page
+      // handlePassphraseSubmit(passphrase);
     } else {
       alert('I smell a rat...');
+      return (<CustomAlert message='I smell a rat...' type='alert' onClose={closeIt} />);
     }
-    onClose(); // Close the PassphraseForm
+    // closeIt(); // Close the PassphraseForm
   };
+  
+
 
   return (
     <div className="passphrase-form-container">
@@ -78,16 +44,16 @@ function PassphraseForm({ onClose }) {
         />
       </form>
         <div className="passphrase-control">
-        <button type="submit" className="passphrase-submit-btn btn">
-          Let me in..
+        <button type="submit" className="passphrase-submit-btn btn" onClick={handleSubmit}>
+          Let me in
         </button>
         
-      <button className="passphrase-close-btn btn" onClick={onClose}>
+      <button type="button" className="passphrase-close-btn btn" onClick={closeIt}>
         Close
       </button>
       </div>
-      
     </div>
+    
   );
 }
 

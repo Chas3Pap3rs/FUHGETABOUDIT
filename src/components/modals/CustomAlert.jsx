@@ -1,5 +1,4 @@
 import React from 'react';
-import ClickOutside from 'react-click-outside';
 
 function CustomAlert({ message, type = 'info', onClose }) {
   const alertClasses = `custom-alert alert-${type}`;

@@ -49,10 +49,10 @@
 } */
 
 .passphrase-form {
-display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
 }
 
 .custom-alert {
@@ -143,3 +143,4 @@ display: flex;
     box-shadow: inset 0px 0px 2.5px 1.25px rgba(0,0,0,0.6);
     color: darkred;
 }
+

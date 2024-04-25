@@ -11,6 +11,7 @@
     flex-wrap: wrap;
 }
 
+
 @media (max-width: 670px) {
     .card-wrapper {
        width: 100%;
@@ -35,6 +36,11 @@
 .card-wrapper:hover {
     box-shadow: 0px .5px 10px red;
 }
+
+.card-wrapper.completed:hover {
+    box-shadow: 0px 0.5px 10px rgba(0, 0, 0, 0.6); /* Default hover effect */
+  }
+  
 
 .card-top {
     width: 100%;

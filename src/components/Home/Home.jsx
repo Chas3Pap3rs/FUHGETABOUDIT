@@ -45,6 +45,7 @@ function Home() {
 
   const [showPassphraseForm, setShowPassphraseForm] = useState(false);
 
+
   const handleShowPassphraseForm = () => {
     setShowPassphraseForm(true);
   };
@@ -53,14 +54,14 @@ function Home() {
     setShowPassphraseForm(!showPassphraseForm);
   };
 
-  const handlePassphraseSubmit = (enteredPassphrase) => {
-    if (enteredPassphrase === 'Cosa Nostra') { // Replace with your actual passphrase
-      console.log('Access granted');
-      // Navigate to Todo page (code goes here)
-    } else {
-      alert('I smell a rat...');
-    }
-  };
+  // const handlePassphraseSubmit = (enteredPassphrase) => {
+  //   // if (enteredPassphrase === 'Cosa Nostra') { // Replace with your actual passphrase
+  //   //   console.log('Access granted');
+  //   //   // Navigate to Todo page (code goes here)
+  //   // } else {
+  //   //   alert('I smell a rat...');
+  //   // }
+  // };
 
   return (
     
@@ -125,8 +126,8 @@ function Home() {
       <audio ref={audioRef} src="./src/assets/audio/forget-about-it-made-with-Voicemod.mp3" preload="auto" />
       
       {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
-      {/* {showPassphraseForm && (<PassphraseForm onSubmit={handlePassphraseSubmit} />)} */}
-      {showPassphraseForm && <PassphraseForm onSubmit={handlePassphraseSubmit} onClose={togglePassphraseForm} />}
+      {showPassphraseForm && (<PassphraseForm closeIt={togglePassphraseForm}/>)}
+      
       
 
       
@@ -135,4 +136,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default Home; 
