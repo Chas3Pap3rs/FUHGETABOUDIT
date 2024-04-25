@@ -144,3 +144,12 @@
     color: darkred;
 }
 
+.alert-content {
+  display: flex; /* Enable flexbox for the container */
+  justify-content: center; /* Center content horizontally */
+  text-align: center; /* Center content vertically (optional) */
+}
+
+.alert-message { /* Apply styling to the p element */
+  margin: 0; /* Remove default margin */
+}

@@ -95,14 +95,14 @@ function ContactForm({ toggle, modal }) {
           message="Send successful, we'll be in touch"
           onClose={handleFirstAlertClose}
         />
-      )}
+    )}
 
-      {showSecondAlert && (
-        <CustomAlert
-          message="Alright, alright! I'll give you the password... It's Cosa Nostra. Yeah, that's right: Cosa Nostra. Don't ever say I never did anything for ya."
-          onClose={handleSecondAlertClose}
-        />
-      )}
+    {showSecondAlert && (
+      <CustomAlert
+        message="Alright, alright! I'll give you the password... It's Cosa Nostra. Yeah, that's right: Cosa Nostra. Don't ever say I never did anything for ya."
+        onClose={handleSecondAlertClose}
+      />
+    )}
 
 </>
 
