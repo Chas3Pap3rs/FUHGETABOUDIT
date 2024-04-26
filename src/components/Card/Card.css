@@ -89,6 +89,7 @@
     padding: 15px;
     padding-top: 25px;  
     margin-bottom: 5px;
+    user-select: none;
 }
 
 
@@ -169,3 +170,19 @@ i {
     box-shadow: inset 0px 0px 2.5px 1.75px rgba(0.6,0,0,0);
     border: 1.5px outset black;
 }
+
+.disable-scroll {
+    overflow-y: hidden;
+  }
+
+  .disable-pointer {
+    pointer-events: none;
+  }
+  
+  .disable-scroll {
+    overflow-y: hidden;
+  }
+  
+  .card-header, .card-details {
+    cursor: ${({ completed }) => (completed ? "default" : "pointer")};
+  }
