@@ -69,6 +69,13 @@ function TodoList() {
     }
   };
 
+  const handleSetCompleted = (index) => {
+    let tempList = [...taskList];
+    tempList[index].isCompleted = !tempList[index].isCompleted;
+    localStorage.setItem("taskList", JSON.stringify(tempList));
+    setTaskList(tempList); // Update state
+  };
+
   return (
     <>
       <div className="todopage-container">
@@ -82,29 +89,21 @@ function TodoList() {
             <button className="todo-btn btn btn-outline-light mt-3" onClick={toggle}>New Hit</button>
           </div>
         </div>
-        {/* <div className="task-container"> */}
-          {/* {taskList.length > 0 ? (
-            taskList.map((obj, index) => ( // Check if taskList has elements before map
-              <Card key={index} taskObj={obj} index={index} deleteTask={deleteTask} updateListArray={updateListArray} />
-            ))
-          ) : (
-            <p>Loading tasks...</p> // Display a loading message while data is fetched
-          )} */}
 
-{taskList.length > 0 ? (
-  <div className="task-container">
-    {taskList.length > 0 ? (
-            taskList.map((obj, index) => ( // Check if taskList has elements before map
-              <Card key={index} taskObj={obj} index={index} deleteTask={deleteTask} updateListArray={updateListArray} />
-            ))
-          ) : (
-            <p>Loading tasks...</p> // Display a loading message while data is fetched
-          )}
-  </div>) : null}  
+        {taskList.length > 0 ? (
+          <div className="task-container">
+            {taskList.length > 0 ? (
+              taskList.map((obj, index) => ( // Check if taskList has elements before map
+                <Card key={index} taskObj={obj} index={index} deleteTask={deleteTask} updateListArray={updateListArray} handleSetCompleted={handleSetCompleted} />
+              ))
+              ) : (
+                <p>Loading tasks...</p> // Display a loading message while data is fetched
+              )}
 
-        {/* </div> */}
-        <CreateTask toggle={toggle} modal={modal} save={saveTask} />
-        {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
+          </div>) : null} 
+
+            <CreateTask toggle={toggle} modal={modal} save={saveTask} />
+            {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
       </div>
     </>
   );

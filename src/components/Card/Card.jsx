@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Card.css';
 import EditTask from '../modals/EditTask';
+// import TodoList from '../TodoList/TodoList';
 
-const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
+const Card = ({ taskObj, index, deleteTask, updateListArray, handleSetCompleted }) => {
   const [modal, setModal] = useState(false);
-  const [completed, setCompleted] = useState(false);
+  const [completed, setCompletedLocal] = useState(false);
+
+  useEffect(() => {
+    // Update local completed state when taskObj.isCompleted changes
+    setCompletedLocal(taskObj.isCompleted);
+  }, [taskObj.isCompleted]);
 
   const toggle = () => {
     setModal(!modal);
@@ -18,17 +24,11 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
     deleteTask(index);
   };
 
-//   const updateCompletedState = async () => {
-//     const tempList = [...taskList]; // Spread operator to avoid mutation
-//     // Find the index of the task to update
-//     const targetIndex = taskList.findIndex((obj) => obj.Name === taskObj.Name);
-//     // Update the isCompleted property for the target task
-//     tempList[targetIndex].isCompleted = !completed;
-//     // Update local storage and state
-//     localStorage.setItem("taskList", JSON.stringify(tempList));
-//     setTaskList(tempList);
-//     setCompleted(!completed); // Update local component state
-//   };
+  const handleCompletedClick = () => {
+    const newCompletedState = !completed; // Toggle local completed state
+    setCompletedLocal(newCompletedState);
+    handleSetCompleted(index); // Call the prop function to update completed status in parent component
+  };
 
   return (
     <>
@@ -36,7 +36,7 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
         <div className="card-top" style={{ "backgroundColor": "#252524" }}>
           <span className="card-header" style={{ "backgroundColor": "#252524", "borderRadius": "10px", "cursor": "pointer" }} onClick={() => setModal(true)}>{taskObj.Name}</span>
           <i className="fa-solid fa-pencil" style={{ "color": "white", "cursor": "pointer" }} onClick={() => setModal(true)}></i>
-          <i className="fa-solid fa-crosshairs" style={{ "color": "white", "cursor": "pointer" }} onClick={() => setCompleted(!completed)}></i>
+          <i className="fa-solid fa-crosshairs" style={{ "color": "white", "cursor": "pointer" }} onClick={handleCompletedClick}></i>
           <i className="fa-solid fa-toilet ml-2" style={{ "cursor": "pointer", "justifyContent": "flex-end" }} onClick={handleDelete}></i>
         </div>
         <div className="task-holder overflow-auto">
@@ -44,8 +44,11 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
         </div>
         <EditTask modal={modal} toggle={toggle} updateTask={updateTask} taskObj={taskObj} />
       </div>
+      {/* {console.log(taskObj)} */}
     </>
+    
   );
+  
 };
 
 export default Card;
