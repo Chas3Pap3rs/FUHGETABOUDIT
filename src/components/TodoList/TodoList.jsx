@@ -82,15 +82,27 @@ function TodoList() {
             <button className="todo-btn btn btn-outline-light mt-3" onClick={toggle}>New Hit</button>
           </div>
         </div>
-        <div className="task-container">
-          {taskList.length > 0 ? (
+        {/* <div className="task-container"> */}
+          {/* {taskList.length > 0 ? (
+            taskList.map((obj, index) => ( // Check if taskList has elements before map
+              <Card key={index} taskObj={obj} index={index} deleteTask={deleteTask} updateListArray={updateListArray} />
+            ))
+          ) : (
+            <p>Loading tasks...</p> // Display a loading message while data is fetched
+          )} */}
+
+{taskList.length > 0 ? (
+  <div className="task-container">
+    {taskList.length > 0 ? (
             taskList.map((obj, index) => ( // Check if taskList has elements before map
               <Card key={index} taskObj={obj} index={index} deleteTask={deleteTask} updateListArray={updateListArray} />
             ))
           ) : (
             <p>Loading tasks...</p> // Display a loading message while data is fetched
           )}
-        </div>
+  </div>) : null}  
+
+        {/* </div> */}
         <CreateTask toggle={toggle} modal={modal} save={saveTask} />
         {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
       </div>

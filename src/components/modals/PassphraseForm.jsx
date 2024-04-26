@@ -21,7 +21,7 @@ function PassphraseForm({closeIt}) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (passphrase === 'Cosa Nostra') {
+    if (passphrase === 'cosa nostra') {
       navigate('/todo-list'); // Navigate to Todo page
     } else {
       setShowRatSmelt(true);

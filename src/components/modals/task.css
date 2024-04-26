@@ -63,6 +63,7 @@
     box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.6); /* Similar shadow effect */
     display: flex; /* Allow for additional styling using flexbox */
     align-items: center; /* Vertically center message content */
+    justify-content: center;
     width: 60%;
     height: 25%;
     margin: auto;
@@ -142,14 +143,4 @@
     border: 1.5px inset black;
     box-shadow: inset 0px 0px 2.5px 1.25px rgba(0,0,0,0.6);
     color: darkred;
-}
-
-.alert-content {
-  display: flex; /* Enable flexbox for the container */
-  justify-content: center; /* Center content horizontally */
-  text-align: center; /* Center content vertically (optional) */
-}
-
-.alert-message { /* Apply styling to the p element */
-  margin: 0; /* Remove default margin */
 }
