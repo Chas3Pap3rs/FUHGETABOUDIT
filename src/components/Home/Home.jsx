@@ -6,6 +6,7 @@ import PassphraseForm from '../modals/PassphraseForm';
 import CustomAlert from '../modals/CustomAlert';
 
 function Home() {
+  console.log("Home rendered")
 
   //Audio play functionality
   const audioRef = useRef(null); // useRef hook to store audio element
