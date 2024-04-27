@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useDrag, useDrop } from 'react-dnd';
+
+
 import './TodoList.css';
+
 import CreateTask from '../modals/CreateTask.jsx';
 import ContactForm from '../modals/ContactForm.jsx';
 import Card from '../Card/Card.jsx';
-import { Link } from 'react-router-dom';
 
 function TodoList() {
   const [modal, setModal] = useState(false);
@@ -35,7 +39,6 @@ function TodoList() {
     tempList.splice(index, 1);
     localStorage.setItem("taskList", JSON.stringify(tempList));
     setTaskList(tempList);
-    window.location.reload();
   };
 
   const updateListArray = (obj, index) => {
@@ -43,7 +46,6 @@ function TodoList() {
     tempList[index] = obj;
     localStorage.setItem("taskList", JSON.stringify(tempList));
     setTaskList(tempList);
-    window.location.reload();
   };
 
   const toggle = () => {
@@ -73,11 +75,21 @@ function TodoList() {
     let tempList = [...taskList];
     tempList[index].isCompleted = !tempList[index].isCompleted;
     localStorage.setItem("taskList", JSON.stringify(tempList));
-    setTaskList(tempList); // Update state
+    setTaskList(tempList);
+  };
+
+  const handleCardDrop = (draggedIndex, droppedIndex) => {
+    const tempList = [...taskList]; // Create a copy
+    const [draggedItem] = tempList.splice(draggedIndex, 1); // Remove dragged item
+    tempList.splice(droppedIndex, 0, draggedItem); // Insert dragged item at new position
+    setTaskList(tempList); // Update state with the new list
+    localStorage.setItem("taskList", JSON.stringify(tempList)); // Update local storage
+    console.log("Card with index", draggedIndex, "is being dropped to", droppedIndex); // Use received parameters only
   };
 
   return (
     <>
+    {/* <DndProvider backend={HTML5Backend}> */}
       <div className="todopage-container">
         <Link to="/" className="todo-home-btn btn" type="button">Home</Link>&nbsp;
         <button className="home-contact-btn btn" type="button" onClick={toggleContactForm}>Contact</button>
@@ -91,20 +103,21 @@ function TodoList() {
         </div>
 
         {taskList.length > 0 ? (
-          <div className="task-container">
+          <div className="task-container" id="task-container">
             {taskList.length > 0 ? (
               taskList.map((obj, index) => ( // Check if taskList has elements before map
-                <Card key={index} taskObj={obj} index={index} deleteTask={deleteTask} updateListArray={updateListArray} handleSetCompleted={handleSetCompleted} />
+                <Card key={index} taskObj={obj} index={index} deleteTask={deleteTask} updateListArray={updateListArray} handleSetCompleted={handleSetCompleted} onCardDrop={handleCardDrop} draggable={!modal}/>
               ))
               ) : (
                 <p>Loading tasks...</p> // Display a loading message while data is fetched
-              )}
+            )}
 
           </div>) : null} 
 
-            <CreateTask toggle={toggle} modal={modal} save={saveTask} />
-            {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
+        <CreateTask toggle={toggle} modal={modal} save={saveTask} />
+        {modalOpen && <ContactForm toggle={toggleContactForm} modal={modalOpen} />}
       </div>
+      {/* </DndProvider>  */}
     </>
   );
 }

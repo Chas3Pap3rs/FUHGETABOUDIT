@@ -30,6 +30,7 @@ const EditTask= ({modal, toggle, updateTask, taskObj}) => {
         tempObj['Name'] = taskName
         tempObj['Description'] = description
         updateTask(tempObj)
+        toggle();
     }
 
     return (

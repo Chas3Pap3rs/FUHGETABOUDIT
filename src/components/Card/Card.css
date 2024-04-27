@@ -9,6 +9,7 @@
     margin: 10px;
     background-color: #252524;
     flex-wrap: wrap;
+    z-index: 2;
 }
 
 
