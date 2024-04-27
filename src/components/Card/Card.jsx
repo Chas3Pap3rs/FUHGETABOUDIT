@@ -105,10 +105,3 @@ const dragDropRef = node => {
 };
 
 export default Card;
-
-
-
-
-
-
-

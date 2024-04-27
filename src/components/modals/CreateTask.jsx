@@ -19,7 +19,6 @@ const CreateTask = ({ modal, toggle, save }) => {
     let taskObj = {};
     taskObj.Name = taskName;
     taskObj.Description = description;
-    // taskObj.isCompleted = false;
     save(taskObj);
 
     // Reset input fields after successful save
