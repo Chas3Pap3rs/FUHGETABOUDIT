@@ -13,7 +13,11 @@ Currently, two official plugins are available:
 * A simple GTA/Mobster themed To-Do List (task manager) with a fun puzzle aspect for gaining access.
     - fuhgetaboudit.net
 
-* Use details and functionality: Access the todo-list, if you can. If you ain't "made" (ie: part of the family) then    you're a rat. Tasks and related states save locally, you must know the passphrase to access the "To-Do" list. 
+* Use details and functionality: Access the todo-list, if you can. If you ain't "made" (ie: part of the family) then you're a rat. Tasks and related states save locally, you must know the passphrase to access the "To-Do" list. 
+    - Passphrase: "cosa nostra"
+    - Passphrase/Access Functionaility: For access, click the "I'm Made"    button and enter the passsphrase when prompted. There are two ways you can get a hint for access:
+        - Click the big logo on the home page, an alert will appear saying "Hint: "Our thing" (or "this thing of ours")" - refrencing the meaning of Cosa Nostra
+        - If you click "Join The Family" it will prompt a contact form. If you submit the contact form properly two alert messages will appear. The first stating: "Send successful, we'll be in touch". Upon closing the first alert a second will appear telling you the passphrase, by stating: "Alright, alright! I'll give you the password... It's cosa nostra. Yeah, that's right: cosa nostra. Don't ever say I never did anything for ya"
 
 * Tech Used: HTML, CSS, JS, React, Vite, React Router, Drag and Drop, Bootstrap, Google Fonts, CDN Fonts, and Font Awesome.
 
