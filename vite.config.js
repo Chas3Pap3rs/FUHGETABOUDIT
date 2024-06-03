@@ -6,8 +6,4 @@ export default defineConfig({
   base: '/',
   publicPath: '/FUHGETABOUDIT/',
   plugins: [react()],
-  build:
-  {
-     outDir:'dist',
-  }
 })
